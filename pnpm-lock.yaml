@@ -8,15 +8,15 @@ importers:
 
   .:
     dependencies:
-      '@andrei137/express-crud-router':
-        specifier: ^0.0.8
-        version: 0.0.8
-      '@andrei137/express-middleware':
-        specifier: ^0.0.6
-        version: 0.0.6
-      '@andrei137/load-dotenv':
-        specifier: ^0.0.4
-        version: 0.0.4
+      '@FMI-MediaMaster/express-crud-router':
+        specifier: ^1.0.0
+        version: 1.0.0
+      '@FMI-MediaMaster/express-middleware':
+        specifier: ^1.0.0
+        version: 1.0.0
+      '@FMI-MediaMaster/load-dotenv':
+        specifier: ^1.0.0
+        version: 1.0.0
       chalk:
         specifier: ^5.6.2
         version: 5.6.2
@@ -87,18 +87,18 @@ importers:
 
 packages:
 
+  '@FMI-MediaMaster/express-crud-router@1.0.0':
+    resolution: {integrity: sha512-0KDwb2rkEzSWmoS9tX2MCXEnJJjGxvsskmpSH8CcQ9CNvnRWlpA7bvN/5e+09rkYactbgqrncgkItc+5lRD5LQ==, tarball: https://npm.pkg.github.com/download/@FMI-MediaMaster/express-crud-router/1.0.0/cdd5bad680306e6c04eb7df367fd0383c7b6cee4}
+
+  '@FMI-MediaMaster/express-middleware@1.0.0':
+    resolution: {integrity: sha512-LMwtSKRFsGD7/FgRMoTCrXIjuIXpy2MuqOrrmxk2OfCZkKRRrREbM44mO0gST9LM3WeEdftb2Alf8xtNq6XGRA==, tarball: https://npm.pkg.github.com/download/@FMI-MediaMaster/express-middleware/1.0.0/fbb011786fd3639631a11276b3fce9846d74418d}
+
+  '@FMI-MediaMaster/load-dotenv@1.0.0':
+    resolution: {integrity: sha512-ohGpC+3q+QFnDlcfFJv2cyHbP8xKKEhHDQoFN4ejacHEjps6M0usbaekLlZIizovjd8lp/P4Vv3NzuInSeLflg==, tarball: https://npm.pkg.github.com/download/@FMI-MediaMaster/load-dotenv/1.0.0/c75bd4888867e98b90e9612e01f830147886df45}
+
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
-
-  '@andrei137/express-crud-router@0.0.8':
-    resolution: {integrity: sha512-UKckq2qgPeEPE8eShstcb7jvoyr8OSJx/9UiphQKqEiawqLB5sotead/KvxyZNEpPz94O1rBXizcS4BKCA/u+Q==}
-
-  '@andrei137/express-middleware@0.0.6':
-    resolution: {integrity: sha512-RAFoPpj+tOWIAMn3082rwlnwPBlVpdXp/wFgnwnPZf1KzmlhBrAo8NRee1q6CJZFBVN3NYN0MBaFoP2y5rFj/w==}
-
-  '@andrei137/load-dotenv@0.0.4':
-    resolution: {integrity: sha512-l9VZpHHlHxOjCPx/cokn4cFUtWqIITMmPOM9+ysy/99VHjRV4QNOfPqFZJ+RVTgrqAGv1+aIxWKzrnoUedVOBQ==}
 
   '@babel/helper-string-parser@7.27.1':
     resolution: {integrity: sha512-qMlSxKbpRlAridDExk92nSobyDdpPijUq2DW6oDnUqd0iOGxmQjyqhMIihI9+zv4LPyZdRje2cavWPbCbWm3eA==}
@@ -543,6 +543,9 @@ packages:
 
   '@types/mime@1.3.5':
     resolution: {integrity: sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==}
+
+  '@types/morgan@1.9.10':
+    resolution: {integrity: sha512-sS4A1zheMvsADRVfT0lYbJ4S9lmsey8Zo2F7cnbYjWHP67Q0AwMYuuzLlkIM2N8gAbb9cubhIVFwcIN2XyYCkA==}
 
   '@types/node@24.8.1':
     resolution: {integrity: sha512-alv65KGRadQVfVcG69MuB4IzdYVpRwMG/mq8KWOaoOdyY617P5ivaDiMCGOFDWD2sAn5Q0mR3mRtUOgm99hL9Q==}
@@ -1937,20 +1940,16 @@ packages:
 
 snapshots:
 
-  '@ampproject/remapping@2.3.0':
-    dependencies:
-      '@jridgewell/gen-mapping': 0.3.13
-      '@jridgewell/trace-mapping': 0.3.31
-
-  '@andrei137/express-crud-router@0.0.8':
+  '@FMI-MediaMaster/express-crud-router@1.0.0':
     dependencies:
       express: 5.1.0
       jsonwebtoken: 9.0.2
     transitivePeerDependencies:
       - supports-color
 
-  '@andrei137/express-middleware@0.0.6':
+  '@FMI-MediaMaster/express-middleware@1.0.0':
     dependencies:
+      '@types/morgan': 1.9.10
       chalk: 5.6.2
       express: 5.1.0
       jsonwebtoken: 9.0.2
@@ -1959,9 +1958,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@andrei137/load-dotenv@0.0.4':
+  '@FMI-MediaMaster/load-dotenv@1.0.0':
     dependencies:
       dotenv: 17.2.3
+
+  '@ampproject/remapping@2.3.0':
+    dependencies:
+      '@jridgewell/gen-mapping': 0.3.13
+      '@jridgewell/trace-mapping': 0.3.31
 
   '@babel/helper-string-parser@7.27.1': {}
 
@@ -2285,6 +2289,10 @@ snapshots:
   '@types/json-schema@7.0.15': {}
 
   '@types/mime@1.3.5': {}
+
+  '@types/morgan@1.9.10':
+    dependencies:
+      '@types/node': 24.8.1
 
   '@types/node@24.8.1':
     dependencies:

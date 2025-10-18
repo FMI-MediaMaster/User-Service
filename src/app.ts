@@ -2,13 +2,13 @@ import cors from 'cors';
 import helmet from 'helmet';
 import routes from '@routes';
 import express, { Express } from 'express';
-import config from '@andrei137/load-dotenv';
+import config from '@FMI-MediaMaster/load-dotenv';
 import {
     unknownEndpoint,
     responseExtensions,
     errorHandler,
     requestLogger
-} from '@andrei137/express-middleware';
+} from '@FMI-MediaMaster/express-middleware';
 
 const app: Express = express();
 

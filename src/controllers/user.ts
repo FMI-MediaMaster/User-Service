@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { BaseController } from '@andrei137/express-crud-router';
-import UserService from '../services/user';
+import { BaseController } from '@FMI-MediaMaster/express-crud-router';
+import UserService from '@services/user';
 
 export default class UserController extends BaseController {
     private service = new UserService();
