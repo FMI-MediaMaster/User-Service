@@ -1,5 +1,6 @@
 import request from 'supertest';
 import { Express } from 'express';
+import { describe, it, expect } from 'vitest';
 import app from '../src/app';
 
 describe('UserController', () => {
