@@ -6,6 +6,7 @@ COPY . /app
 WORKDIR /app
 
 FROM base AS prod-deps
+RUN --mount=type=secret,id=npmrc,target=/app/.npmrc
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
 FROM base AS build
@@ -15,5 +16,6 @@ RUN pnpm run build
 FROM base
 COPY --from=prod-deps /app/node_modules /app/node_modules
 COPY --from=build /app/dist /app/dist
-EXPOSE 8000
+EXPOSE 8010
 CMD ["node", "dist/index.js"]
+
