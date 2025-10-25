@@ -20,7 +20,7 @@ app.use(requestLogger(config));
 app.use(responseExtensions);
 app.use('/api', routes);
 app.use(unknownEndpoint);
-app.use(errorHandler);
+app.use(errorHandler(config.NODE_ENV));
 
 export default app;
 
