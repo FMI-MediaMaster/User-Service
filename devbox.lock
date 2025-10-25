@@ -49,6 +49,54 @@
         }
       }
     },
+    "docker@28.4.0": {
+      "last_modified": "2025-10-10T13:35:32Z",
+      "resolved": "github:NixOS/nixpkgs/870493f9a8cb0b074ae5b411b2f232015db19a65#docker",
+      "source": "devbox-search",
+      "version": "28.4.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/bnvsfm00pfigq7mfra4ychhpzkixm37g-docker-28.4.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/bnvsfm00pfigq7mfra4ychhpzkixm37g-docker-28.4.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6a6jlpi39n13614qkxsrcw7fj8wg2rpf-docker-28.4.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/6a6jlpi39n13614qkxsrcw7fj8wg2rpf-docker-28.4.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/g1da19zv5n6riyj3dlqp9agjrwh4xnr6-docker-28.4.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/g1da19zv5n6riyj3dlqp9agjrwh4xnr6-docker-28.4.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/x0zyq8g4b0d3plfnrf1qh532mnv6z5ql-docker-28.4.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/x0zyq8g4b0d3plfnrf1qh532mnv6z5ql-docker-28.4.0"
+        }
+      }
+    },
     "eslint_d@14.3.0": {
       "last_modified": "2025-10-07T08:41:47Z",
       "resolved": "github:NixOS/nixpkgs/bce5fe2bb998488d8e7e7856315f90496723793c#eslint_d",

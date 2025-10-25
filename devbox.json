@@ -2,7 +2,8 @@
   "packages": [
     "eslint_d@14.3.0",
     "bruno@2.12.0",
-    "nodejs@24.10.0"
+    "nodejs@24.10.0",
+    "docker@28.4.0"
   ],
   "env": {
     "DEVBOX_COREPACK_ENABLED": "true"
