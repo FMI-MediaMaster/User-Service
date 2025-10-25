@@ -7,7 +7,7 @@
     "build": "rm -rf dist && tsc -b && tsc-alias && tsc-esm-fix --target dist",
     "prestart": "pnpm run build",
     "start": "NODE_ENV=production node dist/index.js",
-    "dev": "NODE_ENV=development pnpx tsx -r tsconfig-paths/register src/index.ts",
+    "dev": "NODE_ENV=development pnpx tsx watch -r tsconfig-paths/register src/index.ts",
     "test": "NODE_ENV=test vitest --run",
     "test:ui": "NODE_ENV=test vitest --ui",
     "test:coverage": "NODE_ENV=test vitest run --coverage",
