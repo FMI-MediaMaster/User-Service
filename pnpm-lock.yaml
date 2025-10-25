@@ -12,8 +12,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       '@FMI-MediaMaster/express-middleware':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.2
+        version: 1.0.2
       '@FMI-MediaMaster/load-dotenv':
         specifier: ^1.0.0
         version: 1.0.0
@@ -93,8 +93,8 @@ packages:
   '@FMI-MediaMaster/express-crud-router@1.0.0':
     resolution: {integrity: sha512-0KDwb2rkEzSWmoS9tX2MCXEnJJjGxvsskmpSH8CcQ9CNvnRWlpA7bvN/5e+09rkYactbgqrncgkItc+5lRD5LQ==, tarball: https://npm.pkg.github.com/download/@FMI-MediaMaster/express-crud-router/1.0.0/cdd5bad680306e6c04eb7df367fd0383c7b6cee4}
 
-  '@FMI-MediaMaster/express-middleware@1.0.0':
-    resolution: {integrity: sha512-LMwtSKRFsGD7/FgRMoTCrXIjuIXpy2MuqOrrmxk2OfCZkKRRrREbM44mO0gST9LM3WeEdftb2Alf8xtNq6XGRA==, tarball: https://npm.pkg.github.com/download/@FMI-MediaMaster/express-middleware/1.0.0/fbb011786fd3639631a11276b3fce9846d74418d}
+  '@FMI-MediaMaster/express-middleware@1.0.2':
+    resolution: {integrity: sha512-nQ3iUMxo8YD6S+HJj5io2Yq8hmIywfbyVAgtoH+8gkLEm+gWNqh6Lt/UzcZ9Gf9P8YEz/36j3tMgXJhFcQhsUg==, tarball: https://npm.pkg.github.com/download/@FMI-MediaMaster/express-middleware/1.0.2/f7593948bf324c7860758ab472f6eee489103741}
 
   '@FMI-MediaMaster/load-dotenv@1.0.0':
     resolution: {integrity: sha512-ohGpC+3q+QFnDlcfFJv2cyHbP8xKKEhHDQoFN4ejacHEjps6M0usbaekLlZIizovjd8lp/P4Vv3NzuInSeLflg==, tarball: https://npm.pkg.github.com/download/@FMI-MediaMaster/load-dotenv/1.0.0/c75bd4888867e98b90e9612e01f830147886df45}
@@ -1962,7 +1962,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@FMI-MediaMaster/express-middleware@1.0.0':
+  '@FMI-MediaMaster/express-middleware@1.0.2':
     dependencies:
       '@types/morgan': 1.9.10
       chalk: 5.6.2

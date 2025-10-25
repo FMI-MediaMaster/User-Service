@@ -10,6 +10,9 @@
   "shell": {
     "init_hook": [
       "pnpm install"
-    ]
+    ],
+    "scripts": {
+      "bruno": "nohup bruno >/dev/null 2>&1 &"
+    }
   }
 }
