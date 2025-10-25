@@ -11,8 +11,8 @@
     "test": "NODE_ENV=test vitest --run",
     "test:ui": "NODE_ENV=test vitest --ui",
     "test:coverage": "NODE_ENV=test vitest run --coverage",
-    "lint": "eslint_d src",
-    "lint:fix": "eslint_d --fix src"
+    "lint": "eslint_d src tests",
+    "lint:fix": "eslint_d --fix src tests"
   },
   "devDependencies": {
     "@eslint/js": "^9.38.0",
