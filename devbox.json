@@ -11,7 +11,7 @@
   "shell": {
     "init_hook": [
       "pnpm install",
-      "git remote get-url server-template >/dev/null 2>&1 || git remote add -f server-template https://github.com/FMI-MediaMaster/MediaMasterServerTemplate.git",
+      "git remote get-url server-template >/dev/null 2>&1 || git remote add -f server-template https://github.com/FMI-MediaMaster/ServerTemplate.git",
       "export SERVICE_NAME=$(basename -s .git \"$(git config --get remote.origin.url)\" | tr '[:upper:]' '[:lower:]')"
     ],
     "scripts": {
