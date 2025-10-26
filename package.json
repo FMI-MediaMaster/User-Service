@@ -34,9 +34,9 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@FMI-MediaMaster/express-crud-router": "^1.0.0",
-    "@FMI-MediaMaster/express-middleware": "^1.0.2",
-    "@FMI-MediaMaster/load-dotenv": "^1.0.0",
+    "@media-master/express-crud-router": "^0.0.1",
+    "@media-master/express-middleware": "^0.0.1",
+    "@media-master/load-dotenv": "^0.0.1",
     "chalk": "^5.6.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",

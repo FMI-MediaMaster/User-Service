@@ -1,6 +1,6 @@
 import userController from '@controllers/user';
 import { Router } from 'express';
-import { createRouter } from '@FMI-MediaMaster/express-crud-router';
+import { createRouter } from '@media-master/express-crud-router';
 
 const routes: Router = Router();
 
