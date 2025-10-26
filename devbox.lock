@@ -145,6 +145,54 @@
         }
       }
     },
+    "fixjson@1.1.2-unstable-2021-01-05": {
+      "last_modified": "2025-10-07T08:41:47Z",
+      "resolved": "github:NixOS/nixpkgs/bce5fe2bb998488d8e7e7856315f90496723793c#fixjson",
+      "source": "devbox-search",
+      "version": "1.1.2-unstable-2021-01-05",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2a3bqvsfwjbr5iwrwzkps9zwfyw7j3kc-fixjson-1.1.2-unstable-2021-01-05",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/2a3bqvsfwjbr5iwrwzkps9zwfyw7j3kc-fixjson-1.1.2-unstable-2021-01-05"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/g9sqv0yjgcnzw1z71qw3ri8kqg81bdpc-fixjson-1.1.2-unstable-2021-01-05",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/g9sqv0yjgcnzw1z71qw3ri8kqg81bdpc-fixjson-1.1.2-unstable-2021-01-05"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/916g9qcxikx309w9a8i7w90zjzgrln5c-fixjson-1.1.2-unstable-2021-01-05",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/916g9qcxikx309w9a8i7w90zjzgrln5c-fixjson-1.1.2-unstable-2021-01-05"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ky87mrg984da8ai520q33pr3v3k64rcj-fixjson-1.1.2-unstable-2021-01-05",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ky87mrg984da8ai520q33pr3v3k64rcj-fixjson-1.1.2-unstable-2021-01-05"
+        }
+      }
+    },
     "github:NixOS/nixpkgs/nixpkgs-unstable": {
       "last_modified": "2025-10-02T06:31:14Z",
       "resolved": "github:NixOS/nixpkgs/625ad6366178f03acd79f9e3822606dd7985b657?lastModified=1759386674&narHash=sha256-wg1Lz%2F1FC5Q13R%2BmM5a2oTV9TA9L%2FCHHTm3%2FPiLayfA%3D"

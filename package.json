@@ -1,6 +1,4 @@
 {
-  "name": "template",
-  "license": "ISC",
   "packageManager": "pnpm@10.18.3",
   "type": "module",
   "scripts": {
