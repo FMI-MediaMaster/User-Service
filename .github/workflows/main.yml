@@ -9,6 +9,7 @@ on:
     tags: ['*']
 
 permissions:
+  checks: write
   packages: write
   contents: read
   attestations: write

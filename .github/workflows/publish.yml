@@ -3,6 +3,13 @@ name: Push Docker image to multiple registries
 on: 
   workflow_call:
 
+permissions:
+  checks: write
+  packages: write
+  contents: read
+  attestations: write
+  id-token: write
+
 jobs: 
   push_to_registries:
     runs-on: ubuntu-latest    
