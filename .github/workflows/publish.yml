@@ -52,7 +52,9 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository }}
+          images: 
+            ghcr.io/${{ github.repository }}
+            ${{ secrets.DOCKER_USERNAME }}/tmdb-service
           tags: |
             type=semver,pattern={{version}},value=${{ env.TAG_NAME }}
 
