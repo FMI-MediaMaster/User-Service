@@ -38,7 +38,7 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Login to GitHub Container Registry
@@ -54,7 +54,7 @@ jobs:
         with:
           images: 
             ghcr.io/${{ github.repository }}
-            ${{ secrets.DOCKER_USERNAME }}/tmdb-service
+            ${{ vars.DOCKER_USERNAME }}/tmdb-service
           tags: |
             type=semver,pattern={{version}},value=${{ env.TAG_NAME }}
 
