@@ -118,6 +118,15 @@ jobs:
           generate_release_notes: true
           body: |
             **GitHub**: ${{ steps.github-link.outputs.github-link }}
+            ```sh
+              docker pull ghcr.io/fmi-mediamaster/${{ env.REPO_NAME }}:${{ env.TAG_VERSION }}
+            ```
+            <br />  
+            
             **DockerHub**: ${{ steps.dockerhub-link.outputs.dockerhub-link }}
+            ```sh
+              docker pull mediamasterorg/${{ env.REPO_NAME }}:${{ env.TAG_VERSION }}
+            ```
+            <br />  
         env:
           GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
