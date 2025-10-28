@@ -97,7 +97,7 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             /orgs/FMI-MediaMaster/packages/container/${{ env.REPO_NAME }}/versions \
-            --jq ".[] | select(.name == \"${{ env.TAG_VERSION }}\") | .html_url")
+            --jq ".[] | select(.metadata.container.tags[]? == \"${{ env.TAG_VERSION }}\") | .html_url")
           
           RELEASE_LINK+="?tag=${{ env.TAG_VERSION }}"
         
