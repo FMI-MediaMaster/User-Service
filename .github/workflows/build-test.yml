@@ -39,7 +39,10 @@ jobs:
 
       - name: Generate .env from .env.example
         shell: bash
-        # env: Add variables for .env
+        env: 
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_PROJECT_ID: ${{ secrets.SUPABASE_PROJECT_ID }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
         run: |
           > .env
 
