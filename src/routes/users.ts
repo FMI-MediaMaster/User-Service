@@ -1,9 +1,12 @@
 import { Router } from 'express';
-import userController from '@controllers/user';
-import { createRouter } from '@media-master/express-crud-router';
+import UserController from '@controllers/user';
 
 const routes: Router = Router();
+const controller = new UserController();
 
-routes.use(createRouter(userController));
+routes.get('/', controller.readAll);
+routes.get('/:id', controller.read);
+routes.put('/:id', controller.update);
+routes.delete('/:id', controller.delete);
 
 export default routes;

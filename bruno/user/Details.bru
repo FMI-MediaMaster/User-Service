@@ -1,0 +1,20 @@
+meta {
+  name: Details
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:8000/api/users
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzMTk0NTVlMC01ODY2LTRkNDgtOThjMy1mMGJiNTc0NDRjN2YiLCJpYXQiOjE3NjI3MTQyOTksImV4cCI6MTc2MzMxOTA5OX0.x8iOfz38RnArykFfu2chbiQD1ol9qesbAE0C47Zw5To
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
