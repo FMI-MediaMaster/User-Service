@@ -53,8 +53,7 @@ ServerTemplate
 
 ```sh
 devbox bruno
-devbox template:pull
-devbox template:autorebase
+devbox template:fetch
 devbox docker:build
 devbox docker:pull
 devbox docker:run

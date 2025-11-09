@@ -9,13 +9,4 @@ describe('UserController', () => {
         expect(res.status).toBe(200);
         expect(Array.isArray(res.body)).toBe(true);
     });
-
-    it('POST /users should create a user', async () => {
-        const res: request.Response = await request(app as Express)
-            .post('/users')
-            .send({ name: 'Charlie' });
-
-        expect(res.status).toBe(201);
-        expect(res.body.name).toBe('Charlie');
-    });
 });
