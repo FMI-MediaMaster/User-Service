@@ -9,9 +9,12 @@ importers:
   .:
     dependencies:
       '@media-master/express-crud-router':
+        specifier: ^0.0.2
+        version: 0.0.2
+      '@media-master/express-middleware':
         specifier: ^0.0.1
         version: 0.0.1
-      '@media-master/express-middleware':
+      '@media-master/http-errors':
         specifier: ^0.0.1
         version: 0.0.1
       '@media-master/load-dotenv':
@@ -353,11 +356,17 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@media-master/express-crud-router@0.0.1':
-    resolution: {integrity: sha512-6xQyBpTdtzC299G+KPwAw3odfWFiLAJ1t3IaqvSk/dUypyJiwc9zCoc3Nni9BLnh5VWljXYdtzCSVbG0hBFM6Q==}
+  '@media-master/express-crud-router@0.0.2':
+    resolution: {integrity: sha512-7gFLYyOHKM4mKFY0T8qUUONxwoZLriEbNXkQLzk24TlAWXeSMik0G513HGlP8QNFLZrXI8Qd1QA/OfqRqyYFYw==}
 
   '@media-master/express-middleware@0.0.1':
     resolution: {integrity: sha512-qmRKRtOm4LOX37B3w3xUHry4YrFOs0zAfwYf0p5BsWkE9SPaD6NykD4KkfRNIac/z6I1WyaACWu8tf4Ck9OR8w==}
+
+  '@media-master/express-middleware@0.0.2':
+    resolution: {integrity: sha512-NNhxayNH4IUR/YeLSNutbisatB78tB8PPbLhZzM6aKvq9YAmTPfEcVdsHPYKfNeI3CzoP05ePJJGxlErB3cM4w==}
+
+  '@media-master/http-errors@0.0.1':
+    resolution: {integrity: sha512-2ZJMB/A8MS83yKSSUUN6AwpQb1Da9RHpZ8A+Eueg0rIsmP6xGDQKM6l/pYg7mMJ/KwAd7oTNnGBIdeciUecOwA==}
 
   '@media-master/load-dotenv@0.0.1':
     resolution: {integrity: sha512-5LrokEVViuCoFBbYB4WaVsMuwoK/m/uGXFOCUqvgJZfQQuZRWUQoTHq+yiXtLTZzpmeiWwA0xFRTFa/Vx0/RPg==}
@@ -2141,8 +2150,9 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@media-master/express-crud-router@0.0.1':
+  '@media-master/express-crud-router@0.0.2':
     dependencies:
+      '@media-master/express-middleware': 0.0.2
       express: 5.1.0
     transitivePeerDependencies:
       - supports-color
@@ -2156,6 +2166,18 @@ snapshots:
       zod: 4.1.12
     transitivePeerDependencies:
       - supports-color
+
+  '@media-master/express-middleware@0.0.2':
+    dependencies:
+      chalk: 5.6.2
+      express: 5.1.0
+      jsonwebtoken: 9.0.2
+      morgan: 1.10.1
+      zod: 4.1.12
+    transitivePeerDependencies:
+      - supports-color
+
+  '@media-master/http-errors@0.0.1': {}
 
   '@media-master/load-dotenv@0.0.1':
     dependencies:

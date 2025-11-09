@@ -1,13 +1,13 @@
 meta {
-  name: Read Users
+  name: Read One
   type: http
-  seq: 1
+  seq: 3
 }
 
 get {
-  url: {{url}}/users
+  url: {{url}}/users/{{validId}}
   body: none
-  auth: inherit
+  auth: none
 }
 
 settings {

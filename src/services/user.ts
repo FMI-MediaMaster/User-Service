@@ -1,4 +1,6 @@
-import { UserCreateSchema, UserUpdateSchema, User } from '@schemas/user';
+import errors from '@media-master/http-errors';
+import { UserCreateSchema, UserUpdateSchema } from '@schemas/user';
+import { User } from '@types';
 
 export default class UserService {
     private users: User[] = [
@@ -20,9 +22,11 @@ export default class UserService {
         return newUser;
     };
 
-    update = (id: number, data: unknown): User | undefined  => {
+    update = (id: number, data: unknown): User  => {
         const index: number = this.users.findIndex(u => u.id === id);
-        if (index === -1) return undefined;
+        if (index === -1) {
+            throw errors.badRequest('Invalid ID');
+        }
         this.users[index] = { ...this.users[index], ...UserUpdateSchema.parse(data) };
         return this.users[index];
     };
