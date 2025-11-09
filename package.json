@@ -6,7 +6,7 @@
     "prestart": "pnpm run build",
     "start": "NODE_ENV=production node dist/index.js",
     "dev": "NODE_ENV=development pnpx tsx watch -r tsconfig-paths/register src/index.ts",
-    "test": "ls tests 2>/dev/null | grep -q .test.ts && NODE_ENV=test vitest --run || echo \"No tests found, skipping...\"",
+    "test": "if ls tests 2>/dev/null | grep -q .test.ts; then NODE_ENV=test vitest --run; else echo \"No tests found, skipping...\"; fi",
     "test:ui": "NODE_ENV=test vitest --ui",
     "test:coverage": "NODE_ENV=test vitest run --coverage",
     "lint": "eslint_d src tests",
