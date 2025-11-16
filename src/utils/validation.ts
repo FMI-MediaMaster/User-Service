@@ -1,10 +1,4 @@
-export class ValidationError extends Error {
-    status = 400;
-
-    constructor(message: string) {
-        super(message);
-    }
-}
+import errors from '@media-master/http-errors';
 
 export const validateFromBody = (
     body: Record<string, unknown>,
@@ -12,6 +6,6 @@ export const validateFromBody = (
 ): void => {
     const missing = fields.filter((f) => typeof body[f] === 'undefined');
     if (missing.length > 0) {
-        throw new ValidationError(`Missing fields: ${missing.join(', ')}`);
+        throw errors.badRequest(`Missing fields: ${missing.join(', ')}`);
     }
 };

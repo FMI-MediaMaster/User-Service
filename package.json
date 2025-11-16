@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@media-master/express-crud-router": "^1.0.0",
-    "@media-master/express-middleware": "^1.0.0",
+    "@media-master/express-middleware": "^1.0.1",
     "@media-master/http-errors": "^1.0.0",
     "@media-master/load-dotenv": "^1.0.0",
     "@supabase/supabase-js": "^2.77.0",

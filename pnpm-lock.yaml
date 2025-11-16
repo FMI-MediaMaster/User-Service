@@ -12,8 +12,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       '@media-master/express-middleware':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
       '@media-master/http-errors':
         specifier: ^1.0.0
         version: 1.0.0
@@ -374,8 +374,8 @@ packages:
   '@media-master/express-middleware@0.0.2':
     resolution: {integrity: sha512-NNhxayNH4IUR/YeLSNutbisatB78tB8PPbLhZzM6aKvq9YAmTPfEcVdsHPYKfNeI3CzoP05ePJJGxlErB3cM4w==}
 
-  '@media-master/express-middleware@1.0.0':
-    resolution: {integrity: sha512-S3sx8GFkKtaRg0IauIoZUppX+aYZuor3GjFkGPLX0UdThUKRmpSBfGWuugcMCmVx/XRInacolWUAuIpWNi4fNw==}
+  '@media-master/express-middleware@1.0.1':
+    resolution: {integrity: sha512-jZgkFZfZMyVJSkcOpLdaRavq4A8jhB3CdJlzlq8PCps+2op2qax05/Qk4s+q5mmW4wxyzhRrbCuFLPeQ5eRbaQ==}
 
   '@media-master/http-errors@1.0.0':
     resolution: {integrity: sha512-MeRdMjiFN09RIS/HHIROP7Vs1EcCqo8Hzw3tmH5EzB0loJarKHgD0qw2pLac8vJO35Ze1Dkv4jprokMf7kyVCQ==}
@@ -2249,7 +2249,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@media-master/express-middleware@1.0.0':
+  '@media-master/express-middleware@1.0.1':
     dependencies:
       chalk: 5.6.2
       express: 5.1.0

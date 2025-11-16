@@ -1,76 +1,42 @@
 import { Request, Response } from 'express';
 import UserService from '@services/user';
-import { ValidationError } from '@utils/validation';
+import { BaseController } from '@media-master/express-crud-router';
 
-export default class UserController {
+export default class UserController extends BaseController {
     private userService = new UserService();
-
+    
     readAll = async (req: Request, res: Response): Promise<void> => {
-        try {
-            const users = await this.userService.readAll();
-            res.status(200).json(users);
-        } catch (err: unknown) {
-            const message =
-                err instanceof Error ? err.message : 'Unexpected error during readAll';
-            res.status(400).json({ error: message });
-        }
+        res.ok(await this.userService.readAll());
     };
-
+    
     read = async (req: Request, res: Response): Promise<void> => {
-        try {
-            const id: string = req.params.id;
-            const user = await this.userService.readById(id);
-
-            if (!user) {
-                res.status(404).json({ error: 'User not found' });
-                return;
-            }
-
-            res.status(200).json(user);
-        } catch (err: unknown) {
-            const message =
-                err instanceof Error ? err.message : 'Unexpected error during read';
-            res.status(400).json({ error: message });
-        }
+        const user = await this.userService.readById(req.params.id);
+        user
+            ? res.ok(user)
+            : res.notFound('User not found'); 
     };
+    
+    // TODO: update express-crud-router
+    create(req: Request, res: Response): Promise<void> | void {
+        res.badRequest('Method not implemented. Please use signup');
+    }
 
     update = async (req: Request, res: Response): Promise<void> => {
-        try {
-            const id: string = req.params.id;
-            const updated = await this.userService.update(id, req.body);
+        if (req.userId !== req.params.id)
+            res.unauthorized('You can\'t update another user');
 
-            if (!updated) {
-                res.status(404).json({ error: 'User not found' });
-                return;
-            }
-
-            res.status(200).json(updated);
-        } catch (err: unknown) {
-            if (err instanceof ValidationError) {
-                res.status(err.status).json({ error: err.message });
-                return;
-            }
-            const message =
-                err instanceof Error ? err.message : 'Unexpected error during update';
-            res.status(400).json({ error: message });
-        }
+        const updated = await this.userService.update(req.params.id, req.body);
+        updated
+            ? res.ok(updated)
+            : res.notFound('User not found');
     };
 
     delete = async (req: Request, res: Response): Promise<void> => {
-        try {
-            const id: string = req.params.id;
-            const success = await this.userService.delete(id);
+        if (req.userId !== req.params.id)
+            res.unauthorized('You can\'t delete another user');
 
-            if (!success) {
-                res.status(404).json({ error: 'User not found' });
-                return;
-            }
-
-            res.status(204).send();
-        } catch (err: unknown) {
-            const message =
-                err instanceof Error ? err.message : 'Unexpected error during delete';
-            res.status(400).json({ error: message });
-        }
+        await this.userService.delete(req.params.id) 
+            ? res.noContent()
+            : res.notFound('User not found');
     };
 }

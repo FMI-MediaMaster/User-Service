@@ -1,10 +1,11 @@
 import { Router } from 'express';
-import usersRouter from './users'
-import authRouter from './auth'
+import authRouter from './auth';
+import userController from '@controllers/user';
+import { createRouter } from '@media-master/express-crud-router';
 
 const routes: Router = Router();
 
-routes.use('/users', usersRouter);
 routes.use('/auth', authRouter);
+routes.use('/users', createRouter(userController));
 
 export default routes;

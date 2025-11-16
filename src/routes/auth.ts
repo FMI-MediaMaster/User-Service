@@ -1,12 +1,13 @@
 import { Router } from 'express';
-import AuthController from '@controllers/auth'
+import AuthController from '@controllers/auth';
+import { requireAuth } from '@media-master/express-middleware';
 
 const routes: Router = Router();
 const controller = new AuthController();
 
-routes.post('/login', controller.login);
+routes.post('/signin', controller.signin);
 routes.post('/signup', controller.signup);
-routes.get('/logout', controller.logout);
-routes.get('/details', controller.details);
+routes.get('/signout', controller.signout);
+routes.get('/details', requireAuth, controller.details);
 
 export default routes;

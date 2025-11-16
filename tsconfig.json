@@ -19,9 +19,7 @@
       "@services/*": ["src/services/*"],
       "@controllers/*": ["src/controllers/*"],
       "@middleware/*": ["src/middleware/*"],
-      "@utils/*": ["src/utils/*"],
-      "@helpers/*": ["src/helpers/*"]
-
+      "@utils/*": ["src/utils/*"]
     }
   },
   "include": ["src"],
