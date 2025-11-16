@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import UserService from '@services/user';
+import { UpdateUserSchema } from '@schemas/user';
 
 export default class UserController {
     private userService = new UserService();
@@ -9,7 +10,7 @@ export default class UserController {
     };
 
     update = async (req: Request, res: Response): Promise<void> => {
-        const updated = await this.userService.update(req.userId as string, req.body);
+        const updated = await this.userService.update(req.userId as string, UpdateUserSchema.parse(req.body));
         updated
             ? res.ok(updated)
             : res.notFound('User not found');

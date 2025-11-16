@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import errors from '@media-master/http-errors';
 import { supabase } from '@supabase';
 import {
-    SignupInput,
+    SignUpInput,
     AuthResponse,
     UserResponse,
 } from '@types';
@@ -22,7 +22,7 @@ export default class AuthService {
         return { token: jwt.sign({ userId: authData.user.id }, config.SECRET, { expiresIn: '7d' }) };
     };
 
-    signup = async (input: SignupInput): Promise<UserResponse> => {
+    signup = async (input: SignUpInput): Promise<UserResponse> => {
         const { email, password, name, photoUrl } = input;
         const { data: adminData, error: adminError } =
             await supabase.auth.signUp({

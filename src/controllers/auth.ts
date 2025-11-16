@@ -1,34 +1,17 @@
 import { Request, Response } from 'express';
 import AuthService from '@services/auth';
-import { validateFromBody } from '@utils/validation';
+import { SignInSchema, SignUpSchema } from '@schemas/auth';
 
 export default class AuthController {
     private authService = new AuthService();
 
     signin = async (req: Request, res: Response): Promise<void> => {
-        validateFromBody(req.body as Record<string, unknown>, ['email', 'password']);
-        const { email, password } = req.body as {
-            email: string;
-            password: string;
-        };
-
+        const { email, password } = SignInSchema.parse(req.body);
         res.ok(await this.authService.signin(email, password));
     };
 
     signup = async (req: Request, res: Response): Promise<void> => {
-        validateFromBody(req.body as Record<string, unknown>, [
-            'email',
-            'password',
-            'name',
-        ]);
-
-        const { email, password, name, photoUrl } = req.body as {
-            email: string;
-            password: string;
-            name: string;
-            photoUrl?: string;
-        };
-
+        const { email, password, name, photoUrl } = SignUpSchema.parse(req.body);;
         res.created(await this.authService.signup({
             email,
             password,

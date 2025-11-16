@@ -33,36 +33,23 @@ export default class UserService {
     };
 
     update = async (id: string, data: UpdateUserInput): Promise<UserResponse | null> => {
-        const updateData: AdminUserAttributes = {};
-        const userMetadata: Record<string, unknown> = {};
-
-        if (typeof data.email !== 'undefined') {
-            updateData.email = data.email;
-        }
-
-        if (typeof data.password !== 'undefined') {
-            updateData.password = data.password;
-        }
-
-        if (typeof data.name !== 'undefined') {
-            userMetadata.name = data.name;
-        }
-
-        if (typeof data.photoUrl !== 'undefined') {
-            userMetadata.photoUrl = data.photoUrl;
-        }
-
-        if (Object.keys(userMetadata).length > 0) {
-            updateData.user_metadata = userMetadata;
-        }
+        const updateData: AdminUserAttributes = {
+            email: data.email,
+            password: data.password
+        };
+        const userMetadata: Record<string, unknown> = {
+            name: data.name,
+            photoUrl: data.photoUrl,
+        };
 
         if (Object.keys(updateData).length === 0) {
             throw errors.badRequest('No valid fields to update');
         }
+        if (Object.keys(userMetadata).length > 0) {
+            updateData.user_metadata = userMetadata;
+        }
 
-        const { data: updatedData, error } =
-            await supabaseAdmin.auth.admin.updateUserById(id, updateData);
-
+        const { data: updatedData, error } = await supabaseAdmin.auth.admin.updateUserById(id, updateData);
         if (error || !updatedData.user) {
             throw errors.internal('Could not update user');
         }
