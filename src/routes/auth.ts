@@ -8,6 +8,5 @@ const controller = new AuthController();
 routes.post('/signin', controller.signin);
 routes.post('/signup', controller.signup);
 routes.get('/signout', requireAuth, controller.signout);
-routes.get('/details', requireAuth, controller.details);
 
 export default routes;

@@ -1,17 +1,13 @@
-import { createClient } from '@supabase/supabase-js';
 import type { User, AdminUserAttributes } from '@supabase/supabase-js';
-import config from '@media-master/load-dotenv';
-import { Database } from '../database.types';
 import errors from '@media-master/http-errors';
+import {
+    supabase,
+    supabaseAdmin,
+} from '@supabase';
 import {
     UserResponse,
     UpdateUserInput,
 } from '@types';
-
-const supabaseAdmin = createClient<Database>(
-    config.SUPABASE_URL,
-    config.SUPABASE_KEY
-);
 
 export default class UserService {
     private mapUser = (supabaseUser: User): UserResponse => {
@@ -25,25 +21,15 @@ export default class UserService {
         };
     };
 
-    readAll = async (): Promise<UserResponse[]> => {
-        const { data, error } = await supabaseAdmin.auth.admin.listUsers();
-        if (error) {
-            throw errors.internal(error?.message ?? 'Something went wrong');
+    read = async (): Promise<UserResponse> => {
+        const { data: userData, error: userError } = await supabase.auth.getUser();
+        if (userError || !userData.user) {
+            throw userError?.message
+                ? errors.badRequest(userError.message)
+                : errors.internal('Something unexpected happen');
         }
 
-        return data.users.map((u: User) => this.mapUser(u));
-    };
-
-    readById = async (id: string): Promise<UserResponse | null> => {
-        const { data, error } = await supabaseAdmin.auth.admin.getUserById(id);
-        if (error) {
-            throw errors.internal(error?.message ?? 'Something went wrong');
-        }
-        if (!data.user) {
-            return null;
-        }
-
-        return this.mapUser(data.user as User);
+        return this.mapUser(userData.user!);
     };
 
     update = async (id: string, data: UpdateUserInput): Promise<UserResponse | null> => {

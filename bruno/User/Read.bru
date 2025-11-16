@@ -1,13 +1,17 @@
 meta {
   name: Read
   type: http
-  seq: 2
+  seq: 1
 }
 
 get {
-  url: {{url}}/users/{{validId}}
+  url: {{url}}/user/
   body: none
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{authToken}}
 }
 
 settings {
