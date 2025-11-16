@@ -1,7 +1,15 @@
-import { UserCreateSchema } from '@schemas/user';
-import * as z from 'zod';
-
-export type User = z.infer<typeof UserCreateSchema> & {
-    id: number;
+export type UserResponse = {
+    id: string;
+    email: string | null;
+    name?: string;
+    photoUrl?: string;
+    lastSignIn?: string | null;
+    createdAt?: string | null;
 };
 
+export type UpdateUserInput = {
+    email?: string;
+    password?: string;
+    name?: string;
+    photoUrl?: string;
+};

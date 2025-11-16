@@ -1,38 +1,18 @@
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js';
 import config from '@media-master/load-dotenv';
 import { Database } from '../database.types';
 import jwt from 'jsonwebtoken';
 import errors from '@media-master/http-errors';
+import {
+    SignupInput,
+    AuthResponse,
+    UserResponse,
+} from '@types';
 
 const supabaseAdmin = createClient<Database>(
     config.SUPABASE_URL,
     config.SUPABASE_KEY
 );
-
-const supabaseGeneric: SupabaseClient = createClient(
-    config.SUPABASE_URL,
-    config.SUPABASE_KEY
-);
-
-type SignupInput = {
-    email: string;
-    password: string;
-    name: string;
-    photoUrl?: string;
-};
-
-type UserResponse = {
-    id: string;
-    email: string | null;
-    name?: string;
-    photoUrl?: string;
-    lastSignIn?: string | null;
-    createdAt?: string | null;
-};
-
-type AuthResponse = {
-    token: string;
-};
 
 export default class AuthService {
     async signin(email: string, password: string): Promise<AuthResponse> {

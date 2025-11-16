@@ -3,27 +3,15 @@ import type { User, AdminUserAttributes } from '@supabase/supabase-js';
 import config from '@media-master/load-dotenv';
 import { Database } from '../database.types';
 import errors from '@media-master/http-errors';
+import {
+    UserResponse,
+    UpdateUserInput,
+} from '@types';
 
 const supabaseAdmin = createClient<Database>(
     config.SUPABASE_URL,
     config.SUPABASE_KEY
 );
-
-export type UserResponse = {
-    id: string;
-    email: string | null;
-    name?: string;
-    photoUrl?: string;
-    lastSignIn?: string | null;
-    createdAt?: string | null;
-};
-
-type UpdateUserInput = {
-    email?: string;
-    password?: string;
-    name?: string;
-    photoUrl?: string;
-};
 
 export default class UserService {
     private mapUser = (supabaseUser: User): UserResponse => {
