@@ -38,7 +38,6 @@ export default class AuthController {
     };
 
     signout = async (req: Request, res: Response): Promise<void> => {
-        console.log(req.userId);
         await this.authService.signout(req.userId as string);
         res.noContent();
     };

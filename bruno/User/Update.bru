@@ -5,18 +5,21 @@ meta {
 }
 
 put {
-  url: {{url}}/users/1762197061102
+  url: {{url}}/users/{{validId}}
   body: json
-  auth: inherit
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{authToken}}
 }
 
 body:json {
   {
-    "name": "Maria testare update"
+    "name": "Test update"
   }
 }
 
 settings {
   encodeUrl: true
-  timeout: 0
 }

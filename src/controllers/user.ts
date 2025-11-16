@@ -4,18 +4,18 @@ import { BaseController } from '@media-master/express-crud-router';
 
 export default class UserController extends BaseController {
     private userService = new UserService();
-    
+
     readAll = async (req: Request, res: Response): Promise<void> => {
         res.ok(await this.userService.readAll());
     };
-    
+
     read = async (req: Request, res: Response): Promise<void> => {
         const user = await this.userService.readById(req.params.id);
         user
             ? res.ok(user)
-            : res.notFound('User not found'); 
+            : res.notFound('User not found');
     };
-    
+
     // TODO: update express-crud-router
     create(req: Request, res: Response): Promise<void> | void {
         res.badRequest('Method not implemented. Please use signup');
@@ -35,7 +35,7 @@ export default class UserController extends BaseController {
         if (req.userId !== req.params.id)
             res.unauthorized('You can\'t delete another user');
 
-        await this.userService.delete(req.params.id) 
+        await this.userService.delete(req.params.id)
             ? res.noContent()
             : res.notFound('User not found');
     };

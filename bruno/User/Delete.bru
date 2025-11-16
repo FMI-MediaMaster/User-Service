@@ -5,12 +5,15 @@ meta {
 }
 
 delete {
-  url: {{url}}/users/2
+  url: {{url}}/users/{{validId}}
   body: none
-  auth: inherit
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{authToken}}
 }
 
 settings {
   encodeUrl: true
-  timeout: 0
 }
