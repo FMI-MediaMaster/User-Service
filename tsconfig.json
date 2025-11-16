@@ -12,6 +12,7 @@
     "baseUrl": ".",
     "paths": {
       "@app": ["src/app"],
+      "@types": ["src/types/index"],
       "@routes": ["src/routes/index"],
       "@routes/*": ["src/routes/*"],
       "@schemas/*": ["src/schemas/*"],

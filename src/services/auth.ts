@@ -6,12 +6,12 @@ import { ValidationError } from '@utils/validation';
 
 const supabaseAdmin = createClient<Database>(
     config.SUPABASE_URL,
-    config.SUPABASE_SERVICE_ROLE_KEY
+    config.SUPABASE_KEY
 );
 
 const supabaseGeneric: SupabaseClient = createClient(
     config.SUPABASE_URL,
-    config.SUPABASE_SERVICE_ROLE_KEY
+    config.SUPABASE_KEY
 );
 
 type SignupInput = {

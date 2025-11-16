@@ -7,8 +7,3 @@ export const UserCreateSchema = z.object({
 export const UserUpdateSchema = z.object({
     name: z.string()
 });
-
-export type User = z.infer<typeof UserCreateSchema> & {
-    id: number;
-};
-
