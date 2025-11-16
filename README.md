@@ -5,13 +5,19 @@ The service runs on port 8001 by default.
 
 ## 🌐 Endpoints
 
+### Auth
+
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET    | /users               | TODO |
-| POST   | /users               | TODO |
-| PUT    | /users/{id}          | TODO |
-| DELETE | /users/{id}          | TODO |
-| GET    | /auth               | TODO |
-| POST   | /auth               | TODO |
-| PUT    | /auth/{id}          | TODO |
-| DELETE | /auth/{id}          | TODO |
+| POST   | /auth/signup      | Create a user |
+| POST   | /auth/signin      | Authenticate a user |
+| PUT    | /auth/signout     | Terminate session for a user |
+
+
+### User
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET    | /user/   | View a user's details |
+| PUT    | /user/   | Update a user |
+| DELETE | /user/   | Delete a user |
