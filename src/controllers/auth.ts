@@ -1,24 +1,27 @@
 import { Request, Response } from 'express';
 import AuthService from '@services/auth';
+import { SignInSchema, SignUpSchema } from '@schemas/auth';
 
 export default class AuthController {
-    private service = new AuthService();
+    private authService = new AuthService();
 
-    // TODO
-    login = async (req: Request, res: Response): Promise<void> => {
-        console.log("login");
-        res.noContent();
+    signup = async (req: Request, res: Response): Promise<void> => {
+        const { email, password, name, photoUrl } = SignUpSchema.parse(req.body);;
+        res.created(await this.authService.signup({
+            email,
+            password,
+            name,
+            photoUrl,
+        }));
     };
 
-    // TODO: async + promise
-    signup = (req: Request, res: Response): void => {
-        console.log("signup");
-        res.noContent();
+    signin = async (req: Request, res: Response): Promise<void> => {
+        const { email, password } = SignInSchema.parse(req.body);
+        res.ok(await this.authService.signin(email, password));
     };
 
-    // TODO: async + promise
-    logout = (req: Request, res: Response): void => {
-        console.log("logout");
+    signout = async (req: Request, res: Response): Promise<void> => {
+        await this.authService.signout();
         res.noContent();
     };
-}
+};

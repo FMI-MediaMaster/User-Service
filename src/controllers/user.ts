@@ -1,43 +1,24 @@
 import { Request, Response } from 'express';
-import { BaseController } from '@media-master/express-crud-router';
 import UserService from '@services/user';
+import { UpdateUserSchema } from '@schemas/user';
 
-export default class UserController extends BaseController {
-    private service = new UserService();
+export default class UserController {
+    private userService = new UserService();
 
-    readAll = (req: Request, res: Response): void => {
-        res.ok(this.service.readAll());
+    read = async (req: Request, res: Response): Promise<void> => {
+        res.ok(await this.userService.read());
     };
 
-    read = (req: Request, res: Response): void => {
-        const user = this.service.readById(Number(req.params.id));
-        if (!user) {
-            res.notFound('User not found');
-            return;
-        }
-        res.ok(user);
+    update = async (req: Request, res: Response): Promise<void> => {
+        const updated = await this.userService.update(req.userId as string, UpdateUserSchema.parse(req.body));
+        updated
+            ? res.ok(updated)
+            : res.notFound('User not found');
     };
 
-    create = (req: Request, res: Response): void => {
-        const newUser = this.service.create(req.body);
-        res.created(newUser);
+    delete = async (req: Request, res: Response): Promise<void> => {
+        await this.userService.delete(req.userId as string)
+            ? res.noContent()
+            : res.notFound('User not found');
     };
-
-    update = (req: Request, res: Response): void => {
-        const updated = this.service.update(Number(req.params.id), req.body);
-        if (!updated) {
-            res.notFound('User not found');
-            return;
-        }
-        res.ok(updated);
-    };
-
-    delete = (req: Request, res: Response): void => {
-        const success = this.service.delete(Number(req.params.id));
-        if (!success) {
-            res.notFound('User not found');
-            return;
-        }
-        res.noContent();
-    };
-}
+};
