@@ -18,6 +18,6 @@ The service runs on port 8001 by default.
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET    | /user/   | View a user's details |
-| PUT    | /user/   | Update a user |
-| DELETE | /user/   | Delete a user |
+| GET    | /user   | View a user's details |
+| PUT    | /user   | Update a user |
+| DELETE | /user   | Delete a user |
