@@ -10,7 +10,8 @@
     "test:ui": "NODE_ENV=test vitest --ui",
     "test:coverage": "NODE_ENV=test vitest run --coverage",
     "lint": "eslint_d src tests",
-    "lint:fix": "eslint_d --fix src tests"
+    "lint:fix": "eslint_d --fix src tests",
+    "generate:database": "dotenv -e .env -- pnpx supabase gen types typescript --project-id \"$SUPABASE_PROJECT_ID\" > src/types/database.types.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
