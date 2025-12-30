@@ -11,7 +11,7 @@ const passwordSchema = z
         message: 'The password should contain at least one lowercase letter',
     })
     .refine((password) => /[0-9]/.test(password), { message: 'The password should contain at least one digit' })
-    .refine((password) => /[!@#$%^&*]/.test(password), {
+    .refine((password) => /[^a-zA-Z0-9\s]/.test(password), {
         message: 'The password should contain at least one special character',
     });
 
@@ -26,3 +26,4 @@ export const SignUpSchema = z.object({
     name: z.string(),
     photoUrl: z.string().optional(),
 });
+
